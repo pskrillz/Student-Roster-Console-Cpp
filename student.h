@@ -1,41 +1,51 @@
 #pragma once
-#ifndef STUDENT_H
-#define STUDENT_H
 #include <string>
+#include<iostream>
 #include "degree.h"
+
 using std::string;
-using namespace std;
 
 class Student {
-	// Default constructor
+protected:
+	string studentId;
+	string firstName;
+	string lastName;
+	string email;
+	int age;
+	int daysLeft;
+	// enum DegreeProgram degreeProgram;
+
+
 public:
+		// days left array instantiate
+	static const int daysLeftArray[3];
+
+		// default constructor
 	Student();
 
-	// check the type of "public"etc.
-private:
-	string theStudentId;
-	string theFirstName;
-	string theLastName;
-	string theEmail;
-	int theAge;
-	int theDaysLeftToComplete;
-	enum DegreeProgram theDegreeProgram;
+		// full constructor
+	Student(string studentId, string firstName, string lastName, string email, int age, int daysLeft, int degreeProgram);
 
 
-public:
-	// constructors
-	Student(string studentId, string firstName, string lastName,
-		string email, int age, int daysLeftToComplete, enum DegreeProgram degreeProgram);
+
+
+		// decons
+	~Student();
+
+
+
+	// Default constructor
+	// Student();
 
 
 	// getters
-	string const getStudentId();
+	string getStudentId();
 	string const getFirstName();
 	string const getLastName();
 	string const getEmail();
-	int const getAge();
+	int getAge();
 	int getDaysLeftToComplete();
-	enum DegreeProgram getDegree();
+	// DegreeProgram getDegreeProgram();
 
 	// setters
 	void setStudentId(string studentId);
@@ -44,17 +54,17 @@ public:
 	void setEmail(string email);
 	void setAge(int age);
 	void setDaysLeftToComplete(int daysLeftToComplete);
-	void setDegreeProgram(DegreeProgram degreeProgram);
+	// void setDegreeProgram(DegreeProgram degreeProgram);
 
 
 
 
-	virtual void print(string studentId);
-	virtual DegreeProgram getDegreeProgram();
+	void print();
 
-	// decons
-	~Student();
+	/* // ** Having a problem with the typings syntax **
+	virtual void DegreeProgram::getDegreeProgram();
+	*/
+
+
 
 };
-
-#endif
