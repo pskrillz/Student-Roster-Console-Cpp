@@ -12,81 +12,81 @@ Student::Student() {
 	this->lastName = "";
 	this->email = "";
 	this->age = 0;
-	this->daysLeft = 0;
+	this->daysLeftArray[3];
+};
+
+
+
+
+// full constructor definition 
+
+Student::Student(string studentId, string firstName, string lastName,
+	string email, int age, int daysLeft1, int daysLeft2, int daysLeft3)
+{
+	setStudentId(studentId);
+	setLastName(lastName);
+	setFirstName(firstName);
+	setEmail(email);
+	setAge(age);
+	// setDegreeProgram(degreeProgram);
+	setDaysLeft(daysLeft1, daysLeft2, daysLeft3);
+	
+
 };
 
 
 
 
 
-//
-//Student::Student(string studentId, string firstName, string lastName,
-//	string email, int age, int daysLeftToComplete, DegreeProgram degreeProgram){
-//	setLastName(lastName);
-//	setFirstName(firstName);
-//	setEmail(email);
-//	setAge(age);
-//	// setDegreeProgram(degreeProgram);
-//	setDaysLeftToComplete(daysLeftToComplete);
-//	setStudentId(studentId);
-//
-//};
-//
-//
-//string const Student::getStudentId() {
-//	return theStudentId;
-//};
-//
-//string const Student::getFirstName() {
-//	return theFirstName;
-//};
-//
-//string const Student::getLastName() {
-//	return theLastName;
-//};
-//
-//string const Student::getEmail() {
-//	return theEmail;
-//};
-//
-
-//
-//int Student::getDaysLeftToComplete() {
-//	return theDaysLeftToComplete;
-//};
-//
-///* // ** tobefixed ** 
-//void Student::getDegreeProgram() {
-//	return theDegreeProgram;
-//
-//};
-//*/
 
 
-	// studentID
+	// Student's ID
+
 void Student::setStudentId(string studentId) {
 	this->studentId = studentId;
 };
 
-string Student::getStudentId() {
+string const Student::getStudentId() {
 	return this->studentId;
 };
-// // // // // 
+
+
+	// Student's first name
 
 void Student::setFirstName(string firstName) {
 	this->firstName = firstName;
 };
 
+string const Student::getFirstName() {
+	return this->firstName;
+};
+
+
+	// Student's last name
+
 void Student::setLastName(string lastName) {
 	this->lastName = lastName;
 }
+
+string const Student::getLastName() {
+	return this->lastName;
+};
+
+
+
+	// Student's email
 
 void Student::setEmail(string email) {
 	this->email = email;
 };
 
+string const Student::getEmail() {
+	return this->email;
+};
 
-	// student's age
+
+	// Student's age
+
 void Student::setAge(int age) {
 	this->age= age;
 };
@@ -94,16 +94,23 @@ void Student::setAge(int age) {
 int Student::getAge() {
 	return this->age;
 };
-// // // // // 
+
+	// Days left in class -- array of 3
+
+void Student::setDaysLeft(float daysLeft1, float daysLeft2, float daysLeft3)
+{
+	this->daysLeftArray[0] = daysLeft1;
+	this->daysLeftArray[1] = daysLeft2;
+	this->daysLeftArray[2] = daysLeft3;
+};
+
+
+float Student::getDaysLeft() {
+	return this->daysLeftArray[3];
+};
 
 
 
-//
-//// figure out the pointers
-//void Student::setDaysLeftToComplete(int daysLeftToComplete) {
-//	theDaysLeftToComplete = daysLeftToComplete;
-//};
-//
 ///*
 // void Student::setDegreeProgram(DegreeProgram degreeProgram) {
 //	theDegreeProgram = degreeProgram;
@@ -117,3 +124,9 @@ int Student::getAge() {
 //void Student::print() {
 //};
 
+///* // ** tobefixed ** 
+//void Student::getDegreeProgram() {
+//	return theDegreeProgram;
+//
+//};
+//*/

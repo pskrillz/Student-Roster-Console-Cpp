@@ -12,39 +12,33 @@ protected:
 	string lastName;
 	string email;
 	int age;
-	int daysLeft;
+	float daysLeftArray[3];
 	// enum DegreeProgram degreeProgram;
 
 
 public:
 		// days left array instantiate
-	static const int daysLeftArray[3];
+	// static const double daysLeftArray[];
 
 		// default constructor
 	Student();
 
 		// full constructor
-	Student(string studentId, string firstName, string lastName, string email, int age, int daysLeft, int degreeProgram);
+	Student(string studentId, string firstName, string lastName, string email, int age, int daysLeft1, int daysLeft2, int daysLeft3);
 
 
-
-
-		// decons
+		// deconstructor
 	~Student();
 
 
 
-	// Default constructor
-	// Student();
-
-
-	// getters
-	string getStudentId();
+		// getters
+	string const getStudentId();
 	string const getFirstName();
 	string const getLastName();
 	string const getEmail();
 	int getAge();
-	int getDaysLeftToComplete();
+	float getDaysLeft();
 	// DegreeProgram getDegreeProgram();
 
 	// setters
@@ -53,7 +47,7 @@ public:
 	void setLastName(string lastName);
 	void setEmail(string email);
 	void setAge(int age);
-	void setDaysLeftToComplete(int daysLeftToComplete);
+	void setDaysLeft(float daysLeft1, float daysLeft2, float daysLeft3);
 	// void setDegreeProgram(DegreeProgram degreeProgram);
 
 
