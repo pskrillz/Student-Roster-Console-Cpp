@@ -33,24 +33,6 @@ Student::Student(string studentId, string firstName, string lastName,
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	// Student's ID
 
 void Student::setStudentId(string studentId) {
@@ -112,7 +94,7 @@ int Student::getAge() {
 
 
 
-	// Days left in class -- array of 3
+	// Days in class -- array of 3
 
 
 void Student::setDays(float days1, float days2, float days3)
