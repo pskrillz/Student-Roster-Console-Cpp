@@ -12,16 +12,15 @@ Student::Student() {
 	this->lastName = "";
 	this->email = "";
 	this->age = 0;
-	this->daysLeftArray[3];
+	// this->daysArray[3] = { '0.0' };
 };
-
 
 
 
 // full constructor definition 
 
 Student::Student(string studentId, string firstName, string lastName,
-	string email, int age, int daysLeft1, int daysLeft2, int daysLeft3)
+	string email, int age, int days1, int days2, int days3)
 {
 	setStudentId(studentId);
 	setLastName(lastName);
@@ -29,10 +28,22 @@ Student::Student(string studentId, string firstName, string lastName,
 	setEmail(email);
 	setAge(age);
 	// setDegreeProgram(degreeProgram);
-	setDaysLeft(daysLeft1, daysLeft2, daysLeft3);
+	setDays(days1, days2, days3);
 	
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -95,18 +106,26 @@ int Student::getAge() {
 	return this->age;
 };
 
+
+
+
+
+
+
 	// Days left in class -- array of 3
 
-void Student::setDaysLeft(float daysLeft1, float daysLeft2, float daysLeft3)
+
+void Student::setDays(float days1, float days2, float days3)
 {
-	this->daysLeftArray[0] = daysLeft1;
-	this->daysLeftArray[1] = daysLeft2;
-	this->daysLeftArray[2] = daysLeft3;
+	this->daysArray[0] = days1;
+	this->daysArray[1] = days2;
+	this->daysArray[2] = days3;
 };
 
 
-float Student::getDaysLeft() {
-	return this->daysLeftArray[3];
+float Student::getDays() {
+	// pointer? specific area...causes breakpoint
+	 return this->daysArray;
 };
 
 
@@ -125,8 +144,8 @@ float Student::getDaysLeft() {
 //};
 
 ///* // ** tobefixed ** 
-//void Student::getDegreeProgram() {
-//	return theDegreeProgram;
+// enum Student::getDegreeProgram(string degreeProgram) {
+//	return DegreeProgram;
 //
-//};
+// };
 //*/

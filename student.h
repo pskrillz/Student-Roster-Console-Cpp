@@ -1,7 +1,11 @@
 #pragma once
 #include <string>
-#include<iostream>
+#include <iostream>
 #include "degree.h"
+
+
+// issues: getting array to work in constructor-- commented out for now ln 19, line 45, 55 & student.cpp ln 15, ln 32, and 100+
+
 
 using std::string;
 
@@ -12,13 +16,14 @@ protected:
 	string lastName;
 	string email;
 	int age;
-	float daysLeftArray[3];
-	// enum DegreeProgram degreeProgram;
+	// pointer? 
+	float daysArray[3];
+	enum DegreeProgram degreeProgram;
 
 
 public:
 		// days left array instantiate
-	// static const double daysLeftArray[];
+	// static const double daysArray[];
 
 		// default constructor
 	Student();
@@ -38,8 +43,11 @@ public:
 	string const getLastName();
 	string const getEmail();
 	int getAge();
-	float getDaysLeft();
-	// DegreeProgram getDegreeProgram();
+	//pointer?
+	float getDays();
+
+	// issue #2
+	// enum DegreeProgram getDegreeProgram(string degreeProgram);
 
 	// setters
 	void setStudentId(string studentId);
@@ -47,7 +55,7 @@ public:
 	void setLastName(string lastName);
 	void setEmail(string email);
 	void setAge(int age);
-	void setDaysLeft(float daysLeft1, float daysLeft2, float daysLeft3);
+	void setDays(float days1, float days2, float days3);
 	// void setDegreeProgram(DegreeProgram degreeProgram);
 
 
