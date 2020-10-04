@@ -15,8 +15,11 @@ int main()
      student1->setFirstName("Bob");
      cout << student1->getFirstName() << endl;
 
-    // bug #1
-    // student1->setDays('3.0', '2.0', '1.0');
+    // no more bug, pointer set
+     student1->setDays('3.0', '2.0', '1.0');
+
+     // memory location 
+     cout << student1->getDays() << endl;
  
     
     cout << "Hello World!" << endl;

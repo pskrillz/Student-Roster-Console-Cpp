@@ -123,8 +123,7 @@ void Student::setDays(float days1, float days2, float days3)
 };
 
 
-float Student::getDays() {
-	// pointer? specific area...causes breakpoint
+float * Student::getDays() {
 	 return this->daysArray;
 };
 

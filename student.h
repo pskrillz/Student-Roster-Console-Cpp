@@ -44,7 +44,7 @@ public:
 	string const getEmail();
 	int getAge();
 	//pointer?
-	float getDays();
+	float * getDays();
 
 	// issue #2
 	// enum DegreeProgram getDegreeProgram(string degreeProgram);
