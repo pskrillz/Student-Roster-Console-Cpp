@@ -22,14 +22,26 @@ int main()
      cout << student1->getEmail() << endl;
      student1->setAge(5);
      cout << student1->getAge() << endl;
-     student1->setDays(1.9, 2.0, 3.0);
+     //student1->setDays(1.9, 2.0, 3.0);
      cout << *((student1->getDays())+0) << endl;
      cout << *((student1->getDays())+1) << endl;
      cout << *((student1->getDays())+2) << endl;
+     cout << student1->getDegreeProgram() << endl;
+     student1->setDegreeProgram(NETWORK);
+     cout << student1->getDegreeProgram() << endl;
 
 
-
-
+     /*
+     Bob
+Frank
+A1
+bob@gmail.com
+5
+1.9
+2
+3
+2
+*/
 
 
 

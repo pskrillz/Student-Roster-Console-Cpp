@@ -12,7 +12,11 @@ Student::Student() {
 	this->lastName = "";
 	this->email = "";
 	this->age = 0;
-	// this->daysArray[3] = { '0.0' };
+	// this->daysArray = (1.0, 2.0, 3.0);
+	this->daysArray[0] = 11.0;
+	this->daysArray[1] = 22.0;
+	this->daysArray[2] = 33.0;
+	this->dtype = DegreeProgram::UNDECIDED;
 };
 
 
@@ -20,14 +24,15 @@ Student::Student() {
 // full constructor definition 
 
 Student::Student(string studentId, string firstName, string lastName,
-	string email, int age, int days1, int days2, int days3)
+	string email, int age, int days1, int days2, int days3,
+	DegreeProgram dtype)
 {
 	setStudentId(studentId);
 	setLastName(lastName);
 	setFirstName(firstName);
 	setEmail(email);
 	setAge(age);
-	// setDegreeProgram(degreeProgram);
+	setDegreeProgram(dtype);
 	setDays(days1, days2, days3);
 	
 
@@ -110,12 +115,18 @@ float * Student::getDays() {
 };
 
 
+// enum getter/setter def
 
-///*
-// void Student::setDegreeProgram(DegreeProgram degreeProgram) {
-//	theDegreeProgram = degreeProgram;
-//};
-//*/
+ void Student::setDegreeProgram(DegreeProgram d) {
+	this->dtype = d;
+};
+
+ DegreeProgram Student::getDegreeProgram() {
+	 return dtype;
+ };
+
+
+
 //
 //Student::~Student() {
 //

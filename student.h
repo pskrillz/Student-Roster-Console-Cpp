@@ -18,7 +18,8 @@ protected:
 	int age;
 	// pointer? 
 	float daysArray[3];
-	enum DegreeProgram degreeProgram;
+	// user defined data type does not need enum specified.
+	DegreeProgram dtype;
 
 
 public:
@@ -29,7 +30,9 @@ public:
 	Student();
 
 		// full constructor
-	Student(string studentId, string firstName, string lastName, string email, int age, int daysLeft1, int daysLeft2, int daysLeft3);
+	Student(string studentId, string firstName, string lastName,
+		string email, int age, int daysLeft1, int daysLeft2,
+		int daysLeft3, DegreeProgram dtype);
 
 
 		// deconstructor
@@ -42,6 +45,7 @@ public:
 	string const getFirstName();
 	string const getLastName();
 	string const getEmail();
+	DegreeProgram getDegreeProgram();
 	int getAge();
 	//pointer?
 	float * getDays();
@@ -56,7 +60,7 @@ public:
 	void setEmail(string email);
 	void setAge(int age);
 	void setDays(float days1, float days2, float days3);
-	// void setDegreeProgram(DegreeProgram degreeProgram);
+	void setDegreeProgram(DegreeProgram dtype);
 
 
 
