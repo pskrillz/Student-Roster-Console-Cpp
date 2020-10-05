@@ -6,57 +6,32 @@
 #include "roster.h"
 using namespace std;
 
-//int totalStudents = 6;
-//string classRosterArray[totalStudents];
-//
-
-
-// requirement #E1 create an array of pointers
-void Roster::setRoster() {
-
+int currRosterSize = 5;
+string studentData[currRosterSize]=
+{
+"A1, John, Smith, John1989@gmail.com, 20, 30, 35, 40, SECURITY",
+"A2, Suzan, Erickson, Erickson_1990@gmailcom, 19, 50, 30, 40, NETWORK",
+"A3, Jack,Napoli, The_lawyer99yahoo.com, 19, 20, 40, 33, SOFTWARE",
+"A4, Erin, Black, Erin.black@comcast.net, 22, 50, 58, 40, SECURITY",
+"A5, Myfirstname, Mylastname, myemail@gmail.com, 28, 10, 15, 20, SOFTWARE"
 };
 
 
+Roster::Roster() {
+	this->rosterLimit = 0;
+	this->lastIndex = -1;
+	this->classRosterArray = nullptr;
+}
 
+Roster::Roster(int rosterLimit) {
+	this->rosterLimit = rosterLimit;
+	this->lastIndex = -1;
+	this->classRosterArray = new Student * [rosterLimit];
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// };
-
-
-// junk pile
-
-	/*void setRoster() {
-		for (int i = 0; i < totalStudents; i++) {
-			classRosterArray[i] = studentData[i];
-		};
-	};*/
-
-
-	// void add(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1,
-		// int daysInCourse2, int daysInCourse3, DegreeProgram degree);
-	// void remove(string studentID);
-
-
-
-	//void addToRoster(string studentId, string firstName, string lastName, string email,
-	//	float days1, float days2, float days3) {
-	//
-	//};
-
-
+// challenging- todo 
+void studentParser() {
+	for (int i = 0; i < currRosterSize; i++) {
+		 
+	};
+};
