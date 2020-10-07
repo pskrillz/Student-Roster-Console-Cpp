@@ -19,8 +19,8 @@ public:
 	Student** classRosterArray;
 	void studentParser();
 
-	void addToRoster(string studentId, string firstName, string lastName, string email, int age,
-		float days1, float days2, float days3, DegreeProgram d);
+	void addToRoster(string sid, string first, string last, string em, int age,
+		float d1, float d2, float d3, DegreeProgram d);
 
 	void removeStudent(string studentId);
 
