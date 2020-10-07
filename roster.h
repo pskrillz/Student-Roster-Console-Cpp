@@ -17,7 +17,7 @@ public:
 	int lastIndex;
 
 	Student** classRosterArray;
-	void studentParser();
+	void studentParser(string row);
 
 	void addToRoster(string sid, string first, string last, string em, int age,
 		float d1, float d2, float d3, DegreeProgram d);
@@ -32,7 +32,7 @@ public:
 
 	// Constructors
 	Roster();
-	Roster(int rosterLimit);
+	Roster(int rLimit);
 	~Roster();
 
 

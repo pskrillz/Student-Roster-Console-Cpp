@@ -12,7 +12,6 @@ protected:
 	string lastName;
 	string email;
 	int age;
-	float daysArray[3];
 	DegreeProgram dtype;
 
 
@@ -27,7 +26,7 @@ public:
 		int daysLeft3, DegreeProgram dtype);
 
 
-
+	const static int daysArray = 3;
 
 
 
