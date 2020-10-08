@@ -25,7 +25,7 @@ void Roster::studentParser(string row)
 {
     if (lastIndex < rosterLimit) {
         lastIndex++;
-        //double darray[Student::daysSizeArr];
+        double darray[Student::daysSizeArr];
 
 
         /* if (row[0] == 'A') {
@@ -58,9 +58,10 @@ void Roster::studentParser(string row)
         this->classRosterArray[lastIndex] = new Student();
         //read student ID
         int rhs = studentData[lastIndex].find(",");
-        classRosterArray[lastIndex]->setStudentId(studentData[lastIndex].substr(0, rhs));
+        // this here?
+        this->classRosterArray[lastIndex]->setStudentId(studentData[lastIndex].substr(0, rhs));
 
-        //read firstname
+        //set firstname
         int lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
         classRosterArray[lastIndex]->setFirstName(studentData[lastIndex].substr(lhs, rhs - lhs));
@@ -71,34 +72,39 @@ void Roster::studentParser(string row)
         classRosterArray[lastIndex]->setLastName(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         //read Email
+       
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
         classRosterArray[lastIndex]->setEmail(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         ////read Age
-        //lhs = rhs + 1;
-        //rhs = studentData[lastIndex].find(",", lhs);
-        //classRosterArray[lastIndex]->setAge(stoi(studentData[lastIndex].substr(lhs, rhs - lhs)));
+        std::string::size_type size;
+        lhs = rhs + 1;
+        rhs = studentData[lastIndex].find(",", lhs);
+
+        // made progress here on some stuff but still not working
+        // classRosterArray[lastIndex]->setAge(std::stoi(studentData[lastIndex].substr(lhs, rhs - lhs), &size));
 
         //read days in course
-      /*  lhs = rhs + 1;
-        rhs = studentData[lastIndex].find(",", lhs);
-        darray[0] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
+        //lhs = rhs + 1;
+        //rhs = studentData[lastIndex].find(",", lhs);
+        //darray[0] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
 
-        lhs = rhs + 1;
-        rhs = studentData[lastIndex].find(",", lhs);
-        darray[1] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
+        //lhs = rhs + 1;
+        //rhs = studentData[lastIndex].find(",", lhs);
+        //darray[1] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
 
-        lhs = rhs + 1;
-        rhs = studentData[lastIndex].find(",", lhs);
-        darray[2] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));*/
+        //lhs = rhs + 1;
+        //rhs = studentData[lastIndex].find(",", lhs);
+        //darray[2] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
 
-        //set the days
+        ////set the days
         // classRosterArray[lastIndex]->setDays(darray[0], darray[1], darray[2]);
 
         //lhs = rhs + 1;
         //rhs = studentData[lastIndex].find(",", lhs);
-        ////classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
+        // if rhs == "SECURITY")
+        //classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
 
 
     //}
