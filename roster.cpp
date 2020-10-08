@@ -7,15 +7,7 @@
 using namespace std;
 
 // const usage here?
-const int currRosterSize = 5;
-static string studentData[currRosterSize]=
-{
-"A1,John,Smith,John1989@gmail.com,20,30,35,40,SECURITY",
-"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
-"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
-"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
-"A5,Myfirstname,Mylastname,myemail@gmail.com,28,10,15,20,SOFTWARE"
-};
+
 
 Roster::Roster() {
 	this->rosterLimit = 0;
@@ -33,7 +25,7 @@ void Roster::studentParser(string row)
 {
     if (lastIndex < rosterLimit) {
         lastIndex++;
-        double darray[Student::daysSizeArr];
+        //double darray[Student::daysSizeArr];
 
 
         /* if (row[0] == 'A') {
@@ -83,13 +75,13 @@ void Roster::studentParser(string row)
         rhs = studentData[lastIndex].find(",", lhs);
         classRosterArray[lastIndex]->setEmail(studentData[lastIndex].substr(lhs, rhs - lhs));
 
-        //read Age
-        lhs = rhs + 1;
-        rhs = studentData[lastIndex].find(",", lhs);
-        classRosterArray[lastIndex]->setAge(stoi(studentData[lastIndex].substr(lhs, rhs - lhs)));
+        ////read Age
+        //lhs = rhs + 1;
+        //rhs = studentData[lastIndex].find(",", lhs);
+        //classRosterArray[lastIndex]->setAge(stoi(studentData[lastIndex].substr(lhs, rhs - lhs)));
 
         //read days in course
-        lhs = rhs + 1;
+      /*  lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
         darray[0] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
 
@@ -99,10 +91,10 @@ void Roster::studentParser(string row)
 
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        darray[2] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
+        darray[2] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));*/
 
         //set the days
-        classRosterArray[lastIndex]->setDays(darray[0], darray[1], darray[2]);
+        // classRosterArray[lastIndex]->setDays(darray[0], darray[1], darray[2]);
 
         //lhs = rhs + 1;
         //rhs = studentData[lastIndex].find(",", lhs);

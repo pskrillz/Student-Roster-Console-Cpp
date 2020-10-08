@@ -12,6 +12,7 @@ protected:
 	string lastName;
 	string email;
 	int age;
+	double daysArray[3];
 	DegreeProgram dtype;
 
 
@@ -26,7 +27,7 @@ public:
 		double days3, DegreeProgram dtype);
 
 
-	const static int dArray = 3;
+	const static int daysSizeArr = 3;
 
 
 

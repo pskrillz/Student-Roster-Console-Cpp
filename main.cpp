@@ -31,13 +31,14 @@ int main()
     //student1->setDegreeProgram(NETWORK);
     //cout << student1->getDegreeProgram() << endl;
 
-    Roster * roster1 = new Roster();
+ 
     Roster * roster2 = new Roster(5);
-    
+    roster2->studentParser(studentData[0]);
 
+    cout << roster2->lastIndex << endl;
 
+    cout << roster2->classRosterArray[0] << endl;
 
-        cout << roster2->lastIndex << endl;
      
     return 0;
     
