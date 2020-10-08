@@ -10,13 +10,12 @@ using namespace std;
 const int currRosterSize = 5;
 static string studentData[currRosterSize]=
 {
-"A1, John, Smith, John1989@gmail.com, 20, 30, 35, 40, SECURITY",
-"A2, Suzan, Erickson, Erickson_1990@gmailcom, 19, 50, 30, 40, NETWORK",
-"A3, Jack,Napoli, The_lawyer99yahoo.com, 19, 20, 40, 33, SOFTWARE",
-"A4, Erin, Black, Erin.black@comcast.net, 22, 50, 58, 40, SECURITY",
-"A5, Myfirstname, Mylastname, myemail@gmail.com, 28, 10, 15, 20, SOFTWARE"
+"A1,John,Smith,John1989@gmail.com,20,30,35,40,SECURITY",
+"A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
+"A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
+"A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
+"A5,Myfirstname,Mylastname,myemail@gmail.com,28,10,15,20,SOFTWARE"
 };
-
 
 Roster::Roster() {
 	this->rosterLimit = 0;
@@ -36,7 +35,8 @@ void Roster::studentParser(string row)
         lastIndex++;
         double darray[Student::daysArray];
 
-       /* if (row[0] == 'A') {
+
+        /* if (row[0] == 'A') {
             if (row[1] == '1') {
                 this->classRosterArray[lastIndex] = new Student();
                 classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
@@ -63,19 +63,20 @@ void Roster::studentParser(string row)
             exit(-1);
         }*/
 
-        //ID
+        this->classRosterArray[lastIndex] = new Student();
+        //read student ID
         int rhs = studentData[lastIndex].find(",");
-        classRosterArray[lastIndex]->setID(studentData[lastIndex].substr(0, rhs));
+        classRosterArray[lastIndex]->setStudentId(studentData[lastIndex].substr(0, rhs));
 
         //read firstname
         int lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        classRosterArray[lastIndex]->setFirstname(studentData[lastIndex].substr(lhs, rhs - lhs));
+        classRosterArray[lastIndex]->setFirstName(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         //read lastname
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        classRosterArray[lastIndex]->setLastname(studentData[lastIndex].substr(lhs, rhs - lhs));
+        classRosterArray[lastIndex]->setLastName(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         //read Email
         lhs = rhs + 1;
@@ -101,15 +102,22 @@ void Roster::studentParser(string row)
         darray[2] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         //set the days
-        classRosterArray[lastIndex]->setDays(darray);
+        classRosterArray[lastIndex]->setDays(darray[0], darray[1], darray[2]);
 
-    }
-    else {
-        cerr << "Error! List has exceeded maximum capacity! \n exiting now!";
-        exit(-1);
+        //lhs = rhs + 1;
+        //rhs = studentData[lastIndex].find(",", lhs);
+        ////classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
 
-    }
 
+    //}
+    //else {
+    //    cerr << "Error! List has exceeded maximum capacity! \n exiting now!";
+    //    exit(-1);
+
+    //}
+
+
+    };
 
 };
 
@@ -200,13 +208,13 @@ void Roster::studentParser(string row)
 	// Requirement E.3.c
 
 	// this looks good ?
-	void Roster::printAll() {
-		int i = 0;
-		while (i < sizeof Roster::classRosterArray) {
-			cout << Roster::classRosterArray[i];
-			i++;
-		};
-	};
+	//void Roster::printAll() {
+	//	int i = 0;
+	//	while (i < sizeof Roster::classRosterArray) {
+	//		cout << Roster::classRosterArray[i];
+	//		i++;
+	//	};
+	//};
 
 	// Requirement E.3.d
 	//void printAverageDaysInCourse(string studentID)  that correctly 

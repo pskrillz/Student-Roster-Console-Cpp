@@ -22,11 +22,11 @@ public:
 
 // full constructor
 	Student(string studentId, string firstName, string lastName,
-		string email, int age, int daysLeft1, int daysLeft2,
-		int daysLeft3, DegreeProgram dtype);
+		string email, int age, double days1, double days2,
+		double days3, DegreeProgram dtype);
 
 
-	const static int daysArray = 3;
+	const static int dArray = 3;
 
 
 
@@ -37,7 +37,7 @@ public:
 	string const getEmail();
 	DegreeProgram getDegreeProgram();
 	int getAge();
-	float * getDays();
+	double * getDays();
 
 
 // setters
@@ -46,7 +46,7 @@ public:
 	void setLastName(string lastName);
 	void setEmail(string email);
 	void setAge(int age);
-	void setDays(float days1, float days2, float days3);
+	void setDays(double days1, double days2, double days3);
 	void setDegreeProgram(DegreeProgram dtype);
 
 
