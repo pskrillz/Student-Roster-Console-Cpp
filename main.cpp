@@ -37,7 +37,8 @@ int main()
 
     cout << roster2->lastIndex << endl;
 
-    cout << roster2->classRosterArray[0] << endl;
+    // able to get a memory loation, question is, how to access?
+    cout << &roster2->classRosterArray[0] << endl;
 
      
     return 0;
