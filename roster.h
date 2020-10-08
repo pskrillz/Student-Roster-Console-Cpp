@@ -25,7 +25,7 @@ public:
 	int lastIndex;
 
 	Student** classRosterArray;
-	void studentParser(int row);
+	void studentParser(string row);
 
 	/*void addToRoster(string sid, string first, string last, string em, int age,
 		double d1, double d2, double d3, DegreeProgram d);*/

@@ -10,31 +10,33 @@ using namespace std;
 
 int main()
 {
-    //Student* student1 = new Student(); //instantiation
-    //cout << student1->getFirstName() << endl;
-    //student1->setFirstName("Bob");
-    //cout << student1->getFirstName() << endl;
-    //student1->setLastName("Frank");
-    //cout << student1->getLastName() << endl;
-    //student1->setStudentId("A1");
-    //cout << student1->getStudentId() << endl;
-    //student1->setEmail("bob@gmail.com");
-    //cout << student1->getEmail() << endl;
-    //student1->setAge(5);
-    //cout << student1->getAge() << endl;
+    Student* student1 = new Student(); //instantiation
+    cout << student1->getFirstName() << endl;
+    student1->setFirstName("Bob");
+    cout << student1->getFirstName() << endl;
+    student1->setLastName("Frank");
+    cout << student1->getLastName() << endl;
+    student1->setStudentId("A1");
+    cout << student1->getStudentId() << endl;
+    student1->setEmail("bob@gmail.com");
+    cout << student1->getEmail() << endl;
+    student1->setAge(5);
+    cout << student1->getAge() << endl;
+    student1->setDays(1.9, 2.0, 3.0);
     //student1->setDays(1.9, 2.0, 3.0);
-    ////student1->setDays(1.9, 2.0, 3.0);
-    //cout << *((student1->getDays()) + 0) << endl;
-    //cout << *((student1->getDays()) + 1) << endl;
-    //cout << *((student1->getDays()) + 2) << endl;
-    //cout << student1->getDegreeProgram() << endl;
-    //student1->setDegreeProgram(NETWORK);
-    //cout << student1->getDegreeProgram() << endl;
+    cout << *((student1->getDays()) + 0) << endl;
+    cout << *((student1->getDays()) + 1) << endl;
+    cout << *((student1->getDays()) + 2) << endl;
+    cout << student1->getDegreeProgram() << endl;
+    student1->setDegreeProgram(NETWORK);
+
+    //great job! got the string to come out. 
+    cout << degreeProgramArray[student1->getDegreeProgram()] << endl;
 
  
     Roster * roster2 = new Roster(5);
     roster2->studentParser(studentData[0]);
-    cout << roster2->classRosterArray[0]->getStudentId();
+    
 
     
     // not working

@@ -118,10 +118,13 @@ double * Student::getDays() {
 // enum getter/setter def
 
  void Student::setDegreeProgram(DegreeProgram d) {
+	 // degreeProgramArray[d];
 	this->dtype = d;
 };
 
  DegreeProgram Student::getDegreeProgram() {
+	// string dtype_string;
+	 //dtype_string = degreeProgramArray[dtype];
 	 return dtype;
  };
 
