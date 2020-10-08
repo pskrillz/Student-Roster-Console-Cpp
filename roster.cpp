@@ -58,9 +58,10 @@ void Roster::studentParser(string row)
         this->classRosterArray[lastIndex] = new Student();
         //read student ID
         int rhs = studentData[lastIndex].find(",");
-        classRosterArray[lastIndex]->setStudentId(studentData[lastIndex].substr(0, rhs));
+        // this here?
+        this->classRosterArray[lastIndex]->setStudentId(studentData[lastIndex].substr(0, rhs));
 
-        //read firstname
+        //set firstname
         int lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
         classRosterArray[lastIndex]->setFirstName(studentData[lastIndex].substr(lhs, rhs - lhs));
@@ -80,6 +81,7 @@ void Roster::studentParser(string row)
         std::string::size_type size;
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
+
         // made progress here on some stuff but still not working
         // classRosterArray[lastIndex]->setAge(std::stoi(studentData[lastIndex].substr(lhs, rhs - lhs), &size));
 

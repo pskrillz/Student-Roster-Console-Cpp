@@ -34,8 +34,14 @@ int main()
  
     Roster * roster2 = new Roster(5);
     roster2->studentParser(studentData[0]);
+    cout << roster2->classRosterArray[0]->getStudentId();
 
-    cout << roster2->lastIndex << endl;
+    
+    // not working
+    //roster2->classRosterArray[0]->getFirstName();
+
+
+    //cout << roster2->lastIndex << endl;
 
     // able to get a memory loation, question is, how to access?
     //cout << roster2->classRosterArray[0] << endl;
