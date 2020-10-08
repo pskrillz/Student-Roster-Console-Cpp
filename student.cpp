@@ -24,7 +24,7 @@ Student::Student() {
 // full constructor definition 
 
 Student::Student(string studentId, string firstName, string lastName,
-	string email, int age, int days1, int days2, int days3,
+	string email, int age, double days1, double days2, double days3,
 	DegreeProgram dtype)
 {
 	setStudentId(studentId);
@@ -102,7 +102,7 @@ int Student::getAge() {
 	// Days in class -- array of 3
 
 
-void Student::setDays(float days1, float days2, float days3)
+void Student::setDays(double days1, double days2, double days3)
 {
 	this->daysArray[0] = days1;
 	this->daysArray[1] = days2;
@@ -110,7 +110,7 @@ void Student::setDays(float days1, float days2, float days3)
 };
 
 
-float * Student::getDays() {
+double * Student::getDays() {
 	 return this->daysArray;
 };
 

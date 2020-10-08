@@ -33,7 +33,7 @@ void Roster::studentParser(string row)
 {
     if (lastIndex < rosterLimit) {
         lastIndex++;
-        double darray[Student::daysArray];
+        double darray[Student::daysSizeArr];
 
 
         /* if (row[0] == 'A') {
@@ -86,7 +86,7 @@ void Roster::studentParser(string row)
         //read Age
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        classRosterArray[lastIndex]->setAge(studentData[lastIndex].substr(lhs, rhs - lhs));
+        classRosterArray[lastIndex]->setAge(stoi(studentData[lastIndex].substr(lhs, rhs - lhs)));
 
         //read days in course
         lhs = rhs + 1;

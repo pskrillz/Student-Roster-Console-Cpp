@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-    Student* student1 = new Student(); //instantiation
+    //Student* student1 = new Student(); //instantiation
     //cout << student1->getFirstName() << endl;
     //student1->setFirstName("Bob");
     //cout << student1->getFirstName() << endl;
@@ -33,7 +33,7 @@ int main()
 
     Roster * roster1 = new Roster();
     Roster * roster2 = new Roster(5);
-
+    
 
 
 
