@@ -1,6 +1,5 @@
 #pragma once
-#ifndef ROSTER_H
-#define ROSTER_H
+
 #include <string>
 #include "degree.h"
 
@@ -46,4 +45,4 @@ public:
 
 };
 
-#endif
+

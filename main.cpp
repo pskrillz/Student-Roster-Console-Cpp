@@ -28,19 +28,31 @@ int main()
     cout << *((student1->getDays()) + 1) << endl;
     cout << *((student1->getDays()) + 2) << endl;
     cout << student1->getDegreeProgram() << endl;
+
+    // enum NETWORK = 3
     student1->setDegreeProgram(NETWORK);
 
     //great job! got the string to come out. 
+    // so how this works is that it "gets" the enum type as a number and then uses that
+    // number as the indexer for the "parallel" array of string type. 
     cout << degreeProgramArray[student1->getDegreeProgram()] << endl;
 
  
-    Roster * roster2 = new Roster(5);
-    roster2->studentParser(studentData[0]);
+    Roster* roster1 = new Roster(currRosterSize);
+    roster1->studentParser(studentData[0]);
+    //ugh im not understanding the memory location stuff but at least I get the 
+    //types of errors. 
+    roster1->studentParser(studentData[1]);
+    // roster1->getFirstName();
+          //  Student 1
+    cout << roster1->classRosterArray[0]->getFirstName() << endl;
+    cout << studentData[0] << endl;
+    // roster1->printAll();
     
 
     
     // not working
-    //roster2->classRosterArray[0]->getFirstName();
+    // roster2->classRosterArray[0]->getFirstName();
 
 
     //cout << roster2->lastIndex << endl;

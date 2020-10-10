@@ -59,7 +59,7 @@ void Roster::studentParser(string row)
         //read student ID
         int rhs = studentData[lastIndex].find(",");
         // this here?
-        this->classRosterArray[lastIndex]->setStudentId(studentData[lastIndex].substr(0, rhs));
+        classRosterArray[lastIndex]->setStudentId(studentData[lastIndex].substr(0, rhs));
 
         //set firstname
         int lhs = rhs + 1;
@@ -206,13 +206,34 @@ void Roster::studentParser(string row)
 	// Requirement E.3.c
 
 	// this looks good ?
-	//void Roster::printAll() {
-	//	int i = 0;
-	//	while (i < sizeof Roster::classRosterArray) {
-	//		cout << Roster::classRosterArray[i];
-	//		i++;
-	//	};
-	//};
+	void Roster::printAll() {
+
+    //    cout << "hello world" << endl;
+            //Roster::classRosterArray[0];
+
+		/*int i = 0;
+        * // instead of sizeof i need a length thing... 
+		while (i < Roster::classRosterArray) {
+			cout << Roster::classRosterArray[i];
+			i++;
+		};*/
+	}; // remember syntax
+
+
+
+
+// reference way
+//void Roster::printAll() {
+//    for (int i = 0; i < lastIndex; i++) {
+//        classRosterArray[i]->print();
+//    };
+//};
+
+  /*  {
+        for (
+            int i = 0; i <= this->lastIndex; i++)(this->classRosterArray)[i]->print();
+    }
+*/
 
 	// Requirement E.3.d
 	//void printAverageDaysInCourse(string studentID)  that correctly 
