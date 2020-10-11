@@ -42,6 +42,6 @@ Demonstrate the program’s required functionality by adding a main() function i
 8.  classRoster.printByDegreeProgram(SOFTWARE);
 9.  classRoster.remove("A3");
 10.  classRoster.printAll();
-11.classRoster.remove("A3");
+11. classRoster.remove("A3");
 //expected: the above line should print a message saying such a student with this ID was not found.
 12. Implement the destructor to release the memory that was allocated dynamically in Roster.
