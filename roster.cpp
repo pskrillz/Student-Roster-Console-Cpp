@@ -222,7 +222,7 @@ void Roster::addToRoster(string sid, string first, string last, string em, int a
     this->rosterLimit++;
     
     classRosterArray[this->rosterLimit - 1] = new Student(sid, first, last, em, age, d1, d2, d3, d );
-    cout << "New Student Added Successfully" << endl;
+    cout << "New Student " << classRosterArray[this->rosterLimit -1]->getFirstName() << " added Successfully" << endl;
 };
         
 
@@ -301,6 +301,71 @@ void Roster::addToRoster(string sid, string first, string last, string em, int a
 	//Requirement E.3.e
 	//	e.  public void printInvalidEmails() that verifies student email addresses and displays
 	//	all invalid email addresses to the user.
+//void Roster::printInvalidEmails() {
+//    string invalidEmails[] = { "none" };
+//    int k = 0;
+//    for (int i = 0; i < this->rosterLimit; i++) {
+//        string& email = classRosterArray[i]->getEmail();
+//
+//        for (k; k < email.size(); k++); {
+//            if (email[k] == " ") {
+//                invalidEmails[i] = this->classRosterArray[i]->getEmail();
+//            }
+//        }
+//    }
+//}
+
+void Roster::printInvalidEmails()
+{
+    std::vector<std::string> invalidEmails;
+    invalidEmails.reserve(this->rosterLimit);
+    bool invalid = false;
+    string email;
+    for (unsigned int i = 0; i < this->rosterLimit; i++)
+    {
+        email = this->classRosterArray[i]->getEmail();
+        if (!(email.find('@') < email.length()))
+        {
+            invalidEmails.push_back(email);
+            invalid = true;
+            continue;
+        }
+       
+        if (email.find(' ') < 20)
+        {
+            invalidEmails.push_back(email);
+            invalid = true;
+            continue;
+        }
+        if (!(email.find('.') < email.length()))
+        {
+            invalidEmails.push_back(email);
+            invalid = true;
+        }
+    }
+    if (invalid)
+    {
+        std::cout << "List of invalid emails:\n";
+        for (string& emails : invalidEmails)
+            std::cout << emails << "\n";
+        
+    }
+    else
+        cout << "All emails are valid" << endl;
+}
+
+
+void Roster::printAverageDays(string studentId) {
+    double sum;
+    double average;
+    for (int i = 0; i < this->rosterLimit; i++) {
+        if (studentId == this->classRosterArray[i]->getStudentId()) {
+            sum = *(this->classRosterArray[i]->getDays()) + *(this->classRosterArray[i]->getDays() + 1) + *(this->classRosterArray[i]->getDays() + 2);
+            average = sum / 3;
+            cout << "Average Days in Course for " << this->classRosterArray[i]->getFirstName() << " equals " << average << " days" << endl;
+        };
+    };
+}
 
 
 	//Requirement E.3.f
@@ -308,8 +373,40 @@ void Roster::addToRoster(string sid, string first, string last, string em, int a
 	//	f.  public void printByDegreeProgram(DegreeProgram degreeProgram)
 	//	that prints out student information for a degree program specified by an enumerated type.
 
+//
+void Roster::printByDegree(DegreeProgram d) {
+    for (int i = 0; i < rosterLimit; i++) {
+        if (d == this->classRosterArray[i]->getDegreeProgram()) {
+            cout << this->classRosterArray[i]->getFirstName() << "  " << this->classRosterArray[i]->getStudentId() << endl;
+        };
+    };
 
+};
 
+void Roster::removeStudent(string studentId) {
+    cout << "Checking for student" << endl;
+    bool studentFound = false;
+    for (int i = 0; i < rosterLimit - 2; i++) {
+        if (studentId == this->classRosterArray[i]->getStudentId()) {
+            studentFound = true;
+
+            for (int j = 0; j < rosterLimit; j++) {
+                if (this->classRosterArray[i] != this->classRosterArray[j]) {
+                    this->classRosterArray[i] = this->classRosterArray[j];
+                };
+            };
+
+        };
+    };
+
+    if (!studentFound) {
+        cout << "No Student Found" << endl;
+    };
+    if (studentFound) {
+        rosterLimit = rosterLimit - 1;
+        cout << "Student Deleted" << endl;
+    };
+};
 
 
 

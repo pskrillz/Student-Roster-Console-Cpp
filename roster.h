@@ -14,7 +14,7 @@ static string studentData[currRosterSize] =
 "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK,",
 "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE,",
 "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY,",
-"A5,Myfirstname,Mylastname,myemail@gmail.com,28,10,15,20,SOFTWARE,"
+"A5,Notmy,Realname,myemai l@gmail.com,28,10,15,20,SOFTWARE,"
 };
 
 
@@ -41,6 +41,8 @@ public:
 	void printAverageDays(string studentId);
 
 	void printInvalidEmails();
+
+	void printByDegree(DegreeProgram d);
 
 	// Constructors
 	Roster();

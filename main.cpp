@@ -52,12 +52,37 @@ int main()
      cout << "Parsing Complete, Roster Created" << endl;
      spacer();
     
-     classRoster ->printAll();
-
-     classRoster->addToRoster("a8", "tommy", "firstborn", "papa@gmail.com", 20, 1.0, 2.0, 3.0, SOFTWARE);
+     //not in requirements
+   //  classRoster->addToRoster("B5", "Tommy", "Firstborn", "papa@gmail.com", 20, 1.0, 2.0, 3.0, SOFTWARE);
 
      classRoster->printAll();
+     
+     // Requirement E.3.e
+     classRoster->printInvalidEmails();
 
+     for (int i = 0; i < classRoster->rosterLimit; i++) {
+         classRoster->printAverageDays(classRoster->classRosterArray[i]->getStudentId());
+     };
+   
+  
+     classRoster->printByDegree(SOFTWARE);
+
+     classRoster->removeStudent("A1");
+
+     classRoster->printAll();
+     loadingGraphic();
+
+     classRoster->removeStudent("A2");
+     classRoster->printAll();
+     spacer();
+     loadingGraphic();
+
+     classRoster->removeStudent("A2");
+     spacer();
+     loadingGraphic();
+
+     
+ 
 
     return 0;
     
