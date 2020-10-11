@@ -139,9 +139,3 @@ Student::~Student() {
 void Student::print() {
 };
 
-///* // ** tobefixed ** 
-// enum Student::getDegreeProgram(string degreeProgram) {
-//	return DegreeProgram;
-//
-// };
-//*/

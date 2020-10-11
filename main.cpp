@@ -32,19 +32,19 @@ int main()
     std::cout << "Scripting and Programming - Applications C867\nC++\nStudent ID: 001424316\nPayam Farahmand\n-----------------------\n";
     cout << "Welcome to School System Migrator! " << endl;
     spacer();
-    // pressContinue();
+    pressContinue();
     cout << "Migration commencing..." << endl;
-    loadingGraphic();
-    loadingGraphic();
     loadingGraphic();
  
 
     cout << "Parsing Student Data..." << endl;
+
+
+    
     
     Roster* classRoster = new Roster(currRosterSize);
 
     
-
      for (int i = 0; i < classRoster->rosterLimit; i++) {
          classRoster->studentParser(studentData[i]);
          cout << "Student " << i + 1<< " parsed successfully" << endl;
@@ -54,34 +54,41 @@ int main()
     
      //not in requirements
    //  classRoster->addToRoster("B5", "Tommy", "Firstborn", "papa@gmail.com", 20, 1.0, 2.0, 3.0, SOFTWARE);
-
-     classRoster->printAll();
+     cout << "Printing all student info" << endl;
+     spacer();
+     classRoster->printAll(); spacer();
      
-     // Requirement E.3.e
+  
+     cout << "Finding invalid emails.." << endl;
+     spacer();
      classRoster->printInvalidEmails();
+     spacer();
 
+     cout << "Printing average days in class for each student..." << endl; spacer();
      for (int i = 0; i < classRoster->rosterLimit; i++) {
          classRoster->printAverageDays(classRoster->classRosterArray[i]->getStudentId());
      };
    
-  
+     spacer();
+     cout << "Printing out by Degree Program, Software..." << endl; spacer();
      classRoster->printByDegree(SOFTWARE);
+     spacer();
 
      classRoster->removeStudent("A1");
-
-     classRoster->printAll();
-     loadingGraphic();
-
-     classRoster->removeStudent("A2");
-     classRoster->printAll();
-     spacer();
-     loadingGraphic();
-
      classRoster->removeStudent("A2");
      spacer();
-     loadingGraphic();
+     classRoster->removeStudent("A2");
 
+     spacer();
+     cout << "Printing Remaining Students..." << endl;
+     spacer();
+     classRoster->printAll();
      
+     
+     spacer();
+     
+     cout << "Finished Migration" << endl;
+     cout << "Thanks for Using Student Migrator 2020" << endl << "Goodbye" << endl;
  
 
     return 0;
@@ -91,17 +98,7 @@ int main()
 
 // FINAL REQUIREMENTS
 
-//classRoster.printInvalidEmails();
-////loop through classRosterArray and for each element:
-//
-//classRoster.printAverageDaysInCourse(/*current_object's student id*/)
-//classRoster.printByDegreeProgram(SOFTWARE);
-//classRoster.remove("A3");
-//classRoster.printAll();
-//classRoster.remove("A3");
-//
-////expected: the above line should print a message saying such a student with this ID was not found.
-//
+
 //5.  Implement the destructor to release the memory that was allocated dynamically in Roster.
 
 

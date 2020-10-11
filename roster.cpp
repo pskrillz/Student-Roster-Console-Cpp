@@ -7,7 +7,6 @@
 
 using namespace std;
 
-// const usage here?
 
 
 Roster::Roster() {
@@ -21,19 +20,6 @@ Roster::Roster(int rLimit) {
 	this->lastIndex = -1;
 	this->classRosterArray = new Student * [rosterLimit];
 };
-
-
-
-void Roster::getRoster() {
-
-}
-
-
-
-
-
-
-
 
 
 
@@ -75,8 +61,6 @@ void Roster::studentParser(string row)
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
 
-
-        // made progress here on some stuff but still not working
         classRosterArray[lastIndex]->setAge(std::stoi(studentData[lastIndex].substr(lhs, rhs - lhs), &size));
 
         //read days in course
@@ -111,86 +95,13 @@ void Roster::studentParser(string row)
         {
             classRosterArray[lastIndex]->setDegreeProgram(UNDECIDED);
         }
-           
-            
-      /*  else if (rhs == SOFTWARE)
-            classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
-        else if (rhs == NETWORK)
-            classRosterArray[lastIndex]->setDegreeProgram(NETWORK);
-        else classRosterArray[lastIndex]->setDegreeProgram(UNDECIDED);*/
-
-
-    //}
-    //else {
-    //    cerr << "Error! List has exceeded maximum capacity! \n exiting now!";
-    //    exit(-1);
-
-    //}
-
-
     };
-
 };
 
 
 
 
 
-
-
-
-
-
-
-
-
-//
-//E.Create a Roster class (roster.cpp) by doing the following :
-//
-//1.  Create an array of pointers, classRosterArray,
-//to hold the data provided in the “studentData Table.”
-//2.  Create a student object for each student
-//in the data tableand populate classRosterArray.
-//a.Parse each set of data identified in the 
-//“studentData Table.”
-//b.Add each student object to classRosterArray.
-//
-//3.  Define the following functions :
-//a.  public void add(string studentID, string firstName, string lastName,
-//	string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) 
-//that sets the instance variables from part D1 and updates the roster.
-//b.  public void remove(string studentID)  that removes students from 
-//the roster by student ID.If the student ID does not exist, the function prints an error message indicating that the student was not found.
-//
-//c. public void printAll() that prints a complete tab - separated list of 
-//student data in the provided format : A1[tab] First Name : John[tab] Last Name :
-//Smith[tab] Age : 20[tab]daysInCourse : {35, 40, 55} Degree Program : 
-//Security.The printAll() function should loop through all the students
-//in classRosterArrayand call the print() function for each student.
-//
-//d.  public void printAverageDaysInCourse(string studentID)  that correctly 
-//prints a student’s average number of days in the three courses.The student is identified by the studentID parameter.
-//
-//e.  public void printInvalidEmails() that verifies student email 
-//addressesand displays all invalid email addresses to the user.
-
-
-	// Requirement E.1 & E.2
-
-	 //trying to get array of strings studentData[] 
-	// and assign each item to new student object. 
-
-	// addToRoster is supposed to go through thee studentData table and make each string a new student
-	// object inside the roster. 
-
-
-		 //having trouble with creating array of pointers to connect with
-		//void Roster::studentParser() {
-		//	for (int i = 0; i < currRosterSize; i++) {
-		//		Student * Roster::classRosterArray[i] = studentData[i];
-		//	};
-		//};
-	/*};*/
 
 void Roster::printAll() {  
     for (int i = 0; i < this->rosterLimit; i++) {
@@ -213,10 +124,6 @@ void Roster::printAll() {
 };
 
 
-
-
-	// E.3.a instansiates a new student object and adds to roster. 
-
 void Roster::addToRoster(string sid, string first, string last, string em, int age,
     double d1, double d2, double d3, DegreeProgram d) {
     this->rosterLimit++;
@@ -225,95 +132,6 @@ void Roster::addToRoster(string sid, string first, string last, string em, int a
     cout << "New Student " << classRosterArray[this->rosterLimit -1]->getFirstName() << " added Successfully" << endl;
 };
         
-
-	////	Student * classRosterArray[currRosterSize + 1] = new Student() {sid, first, last, em, age, d1, d2, d3, d};
-	////	currRosterSize++
-	//};
-
-
-
-	//* [from text] Requirement E.3.b
-	// public void remove(string studentID)  
-	//that removes students from the roster by student ID. 
-	//If the student ID does not exist, the function prints an error message indicating that the student was not found.
-
-
-
-
-
-	// Requirement E.3.c
-
-	// this looks good ?
-	// void Roster::printAll() {
-
-    //    cout << "hello world" << endl;
-       /* for (int i = 0; i < rosterLimit; i++) {
-
-        }*/
-       
-
-		/*int i = 0;
-        * // instead of sizeof i need a length thing... 
-		while (i < Roster::classRosterArray) {
-			cout << Roster::classRosterArray[i];
-			i++;
-		};*/
-	// remember syntax
-
-
-
-
-// reference way
-//void Roster::printAll() {
-//    for (int i = 0; i < lastIndex; i++) {
-//    cout << classRosterArray[i];
-//    };
-//};
-
-//void Roster::printAll() {
-//    for (int i = 0; i < lastIndex; i++) {
-//    cout << classRosterArray[i];
-//    };
-//};
-//
-//void roster::printRoster() const
-//{
-//    for (unsigned int i = 0; i < classRosterArray.size(); i++)
-//        classRosterArray.at(i)->Print();
-//}
-
-  /*  {
-        for (
-            int i = 0; i <= this->lastIndex; i++)(this->classRosterArray)[i]->print();
-    }
-*/
-
-	// Requirement E.3.d
-	//void printAverageDaysInCourse(string studentID)  that correctly 
-	//prints a student’s average number of days in the three courses.
-	//The student is identified by the studentID parameter.
-
-	// void printAverageDays(string sid) {
-	//	 float sum = this->daysArray[0] + daysArray[1] + daysArray[2];
-	//};
-
-
-	//Requirement E.3.e
-	//	e.  public void printInvalidEmails() that verifies student email addresses and displays
-	//	all invalid email addresses to the user.
-//void Roster::printInvalidEmails() {
-//    string invalidEmails[] = { "none" };
-//    int k = 0;
-//    for (int i = 0; i < this->rosterLimit; i++) {
-//        string& email = classRosterArray[i]->getEmail();
-//
-//        for (k; k < email.size(); k++); {
-//            if (email[k] == " ") {
-//                invalidEmails[i] = this->classRosterArray[i]->getEmail();
-//            }
-//        }
-//    }
-//}
 
 void Roster::printInvalidEmails()
 {
@@ -345,9 +163,9 @@ void Roster::printInvalidEmails()
     }
     if (invalid)
     {
-        std::cout << "List of invalid emails:\n";
+        
         for (string& emails : invalidEmails)
-            std::cout << emails << "\n";
+            cout << emails << "\n";
         
     }
     else
@@ -368,23 +186,17 @@ void Roster::printAverageDays(string studentId) {
 }
 
 
-	//Requirement E.3.f
-
-	//	f.  public void printByDegreeProgram(DegreeProgram degreeProgram)
-	//	that prints out student information for a degree program specified by an enumerated type.
-
-//
 void Roster::printByDegree(DegreeProgram d) {
     for (int i = 0; i < rosterLimit; i++) {
         if (d == this->classRosterArray[i]->getDegreeProgram()) {
-            cout << this->classRosterArray[i]->getFirstName() << "  " << this->classRosterArray[i]->getStudentId() << endl;
+            cout << this->classRosterArray[i]->getFirstName() << "  #" << this->classRosterArray[i]->getStudentId() << endl;
         };
     };
 
 };
 
 void Roster::removeStudent(string studentId) {
-    cout << "Checking for student" << endl;
+    cout << "Searching database for student # " << studentId << endl;
     bool studentFound = false;
     for (int i = 0; i < rosterLimit - 2; i++) {
         if (studentId == this->classRosterArray[i]->getStudentId()) {
@@ -400,7 +212,7 @@ void Roster::removeStudent(string studentId) {
     };
 
     if (!studentFound) {
-        cout << "No Student Found" << endl;
+        cout << "Error: Student does not exist" << endl;
     };
     if (studentFound) {
         rosterLimit = rosterLimit - 1;
@@ -408,11 +220,4 @@ void Roster::removeStudent(string studentId) {
     };
 };
 
-
-
-
-
-
-/*___________________________________*/
-//
 
