@@ -29,6 +29,7 @@ public:
 	//array of pointers
 	Student** classRosterArray;
 	void studentParser(string row);
+	void getRoster();
 
 	/*void addToRoster(string sid, string first, string last, string em, int age,
 		double d1, double d2, double d3, DegreeProgram d);*/

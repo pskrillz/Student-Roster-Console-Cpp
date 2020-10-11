@@ -13,7 +13,7 @@ int main()
     std::cout << "Scripting and Programming - Applications C867\nC++\nStudent ID: 001424316\nPayam Farahmand\n-----------------------\n";
 
 
-    Student* student1 = new Student(); //instantiation
+    Student* student1 = new Student; //instantiation
     cout << student1->getFirstName() << endl;
     student1->setFirstName("Bob");
     cout << student1->getFirstName() << endl;
@@ -42,18 +42,19 @@ int main()
  
      Roster* roster1 = new Roster(currRosterSize);
      roster1->studentParser(studentData[0]);
-    //ugh im not understanding the memory location stuff but at least I get the 
-    //types of errors. 
-    roster1->studentParser(studentData[1]);
+     roster1->studentParser(studentData[1]);
     
     // cout << studentData[0] << endl;
-     //roster1->printAll();
     
+   //  roster1->printAll();
 
     
     // working!!
-    cout << roster1->classRosterArray[0]->getFirstName();
-    cout << roster1->classRosterArray[1]->getFirstName();
+     cout << roster1->classRosterArray[0]->getFirstName() << "  "
+         << roster1->classRosterArray[0]->getLastName() << "    " <<
+         roster1->classRosterArray[0]->getStudentId() << endl;
+
+     roster1->printAll();
 
 
     //cout << roster2->lastIndex << endl;

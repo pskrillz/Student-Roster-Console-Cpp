@@ -24,7 +24,9 @@ Roster::Roster(int rLimit) {
 
 
 
+void Roster::getRoster() {
 
+}
 
 
 
@@ -54,18 +56,18 @@ void Roster::studentParser(string row)
         //set firstname
         int lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        this->classRosterArray[lastIndex]->setFirstName(studentData[lastIndex].substr(lhs, rhs - lhs));
+        classRosterArray[lastIndex]->setFirstName(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         //read lastname
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        this->classRosterArray[lastIndex]->setLastName(studentData[lastIndex].substr(lhs, rhs - lhs));
+        classRosterArray[lastIndex]->setLastName(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         //read Email
        
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        this->classRosterArray[lastIndex]->setEmail(studentData[lastIndex].substr(lhs, rhs - lhs));
+        classRosterArray[lastIndex]->setEmail(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         ////read Age
         std::string::size_type size;
@@ -169,7 +171,11 @@ void Roster::studentParser(string row)
 		//};
 	/*};*/
 
-
+void Roster::printAll() {  
+    for (int i = 0; i < 2; i++) {
+       cout << classRosterArray[i]->getStudentId();
+    };
+};
 
 
 
@@ -220,9 +226,21 @@ void Roster::studentParser(string row)
 // reference way
 //void Roster::printAll() {
 //    for (int i = 0; i < lastIndex; i++) {
-//        classRosterArray[i]->print();
+//    cout << classRosterArray[i];
 //    };
 //};
+
+//void Roster::printAll() {
+//    for (int i = 0; i < lastIndex; i++) {
+//    cout << classRosterArray[i];
+//    };
+//};
+//
+//void roster::printRoster() const
+//{
+//    for (unsigned int i = 0; i < classRosterArray.size(); i++)
+//        classRosterArray.at(i)->Print();
+//}
 
   /*  {
         for (
