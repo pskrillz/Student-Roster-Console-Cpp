@@ -6,7 +6,7 @@ in Science Software Development program.
 
 
 
-Requirements: 
+Scenario: 
 You are hired as a contractor to help a university migrate an existing student system
 to a new platform using C++ language. Since the application already exists, 
 its requirements exist as well, and they are outlined in the next section. 
@@ -28,3 +28,20 @@ the program should create student objects.
 
 The entire student list will be stored in one array of students called classRosterArray. 
 Specific data-related output will be directed to the console.
+
+Final Program Requirements:
+Demonstrate the program’s required functionality by adding a main() function in main.cpp, which will contain the required function calls to achieve the following results:
+1.  Print out to the screen, via your application, the course title, the programming language used, your WGU student ID, and your name.
+2.  Create an instance of the Roster class called classRoster.
+3.  Add each student to classRoster.
+  Convert the following pseudo code to complete the rest of the  main() function:
+5.  classRoster.printAll();
+6.  classRoster.printInvalidEmails();
+//loop through classRosterArray and for each element:
+7.  classRoster.printAverageDaysInCourse(/*current_object's student id*/);
+8.  classRoster.printByDegreeProgram(SOFTWARE);
+9.  classRoster.remove("A3");
+10.  classRoster.printAll();
+11. classRoster.remove("A3");
+//expected: the above line should print a message saying such a student with this ID was not found.
+12. Implement the destructor to release the memory that was allocated dynamically in Roster.
