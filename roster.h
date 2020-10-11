@@ -31,8 +31,8 @@ public:
 	void studentParser(string row);
 	void getRoster();
 
-	/*void addToRoster(string sid, string first, string last, string em, int age,
-		double d1, double d2, double d3, DegreeProgram d);*/
+	void addToRoster(string sid, string first, string last, string em, int age,
+		double d1, double d2, double d3, DegreeProgram d);
 
 	void removeStudent(string studentId);
 

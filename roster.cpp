@@ -217,9 +217,14 @@ void Roster::printAll() {
 
 	// E.3.a instansiates a new student object and adds to roster. 
 
-	//void Roster::addToRoster(string sid, string first, string last, string em, int age,
-	//	double d1, double d2, double d3, DegreeProgram d) {
- //       
+void Roster::addToRoster(string sid, string first, string last, string em, int age,
+    double d1, double d2, double d3, DegreeProgram d) {
+    this->rosterLimit++;
+    
+    classRosterArray[this->rosterLimit - 1] = new Student(sid, first, last, em, age, d1, d2, d3, d );
+    cout << "New Student Added Successfully" << endl;
+};
+        
 
 	////	Student * classRosterArray[currRosterSize + 1] = new Student() {sid, first, last, em, age, d1, d2, d3, d};
 	////	currRosterSize++
