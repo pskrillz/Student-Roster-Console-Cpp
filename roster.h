@@ -2,6 +2,9 @@
 
 #include <string>
 #include "degree.h"
+#include "student.h"
+#include <vector>
+using namespace std;
 
 using std::string;
 const int currRosterSize = 5;
@@ -23,6 +26,7 @@ public:
 	int rosterLimit;
 	int lastIndex;
 
+	//array of pointers
 	Student** classRosterArray;
 	void studentParser(string row);
 

@@ -10,6 +10,9 @@ using namespace std;
 
 int main()
 {
+    std::cout << "Scripting and Programming - Applications C867\nC++\nStudent ID: 001424316\nPayam Farahmand\n-----------------------\n";
+
+
     Student* student1 = new Student(); //instantiation
     cout << student1->getFirstName() << endl;
     student1->setFirstName("Bob");
@@ -23,36 +26,34 @@ int main()
     student1->setAge(5);
     cout << student1->getAge() << endl;
     student1->setDays(1.9, 2.0, 3.0);
-    //student1->setDays(1.9, 2.0, 3.0);
-    cout << *((student1->getDays()) + 0) << endl;
+    cout << *student1->getDays() << endl;
     cout << *((student1->getDays()) + 1) << endl;
     cout << *((student1->getDays()) + 2) << endl;
     cout << student1->getDegreeProgram() << endl;
 
-    // enum NETWORK = 3
-    student1->setDegreeProgram(NETWORK);
+    //// enum NETWORK = 3
+    //student1->setDegreeProgram(NETWORK);
 
-    //great job! got the string to come out. 
-    // so how this works is that it "gets" the enum type as a number and then uses that
-    // number as the indexer for the "parallel" array of string type. 
-    cout << degreeProgramArray[student1->getDegreeProgram()] << endl;
+    ////great job! got the string to come out. 
+    //// so how this works is that it "gets" the enum type as a number and then uses that
+    //// number as the indexer for the "parallel" array of string type. 
+    //cout << degreeProgramArray[student1->getDegreeProgram()] << endl;
 
  
-    Roster* roster1 = new Roster(currRosterSize);
-    roster1->studentParser(studentData[0]);
+     Roster* roster1 = new Roster(currRosterSize);
+     roster1->studentParser(studentData[0]);
     //ugh im not understanding the memory location stuff but at least I get the 
     //types of errors. 
     roster1->studentParser(studentData[1]);
-    // roster1->getFirstName();
-          //  Student 1
-    cout << roster1->classRosterArray[0]->getFirstName() << endl;
-    cout << studentData[0] << endl;
-    // roster1->printAll();
+    
+    // cout << studentData[0] << endl;
+     //roster1->printAll();
     
 
     
-    // not working
-    // roster2->classRosterArray[0]->getFirstName();
+    // working!!
+    cout << roster1->classRosterArray[0]->getFirstName();
+    cout << roster1->classRosterArray[1]->getFirstName();
 
 
     //cout << roster2->lastIndex << endl;
@@ -68,7 +69,7 @@ int main()
 
 
 // FINAL REQUIREMENTS
-//F.Demonstrate the program’s required functionality by adding a main() 
+//F.Demonstrate the programï¿½s required functionality by adding a main() 
 //function in main.cpp, which will contain the required function calls to achieve the following results :
 //
 //1.  Print out to the screen, via your application, the course title, 

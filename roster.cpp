@@ -4,6 +4,7 @@
 #include "degree.h"
 #include "student.h"
 #include "roster.h"
+
 using namespace std;
 
 // const usage here?
@@ -17,65 +18,54 @@ Roster::Roster() {
 
 Roster::Roster(int rLimit) {
 	this->rosterLimit = rLimit;
-	this->lastIndex = rosterLimit - 1;
+	this->lastIndex = -1;
 	this->classRosterArray = new Student * [rosterLimit];
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void Roster::studentParser(string row)
 {
+
     if (lastIndex < rosterLimit) {
         lastIndex++;
         double darray[Student::daysSizeArr];
 
-
-        /* if (row[0] == 'A') {
-            if (row[1] == '1') {
-                this->classRosterArray[lastIndex] = new Student();
-                classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
-            }
-            else if (row[1] == '2') {
-                this->classRosterArray[lastIndex] = new Student();
-                classRosterArray[lastIndex]->setDegreeProgram(NETWORK);
-            }
-            else if (row[1] == '3') {
-                this->classRosterArray[lastIndex] = new Student();
-                classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
-            }
-        else if (row[0] == 'A') {
-            this->classRosterArray[lastIndex] = new Student();
-            classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
-
-        }
-        else if (row[0] == 'A') {
-            this->classRosterArray[lastIndex] = new Student();
-            classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
-        }
-        else {
-            cerr << "invaild degree type! exiting now! \n";
-            exit(-1);
-        }*/
-
-        this->classRosterArray[lastIndex] = new Student();
+       
+        this->classRosterArray[lastIndex] = new Student; // constructor or not??
         //read student ID
         int rhs = studentData[lastIndex].find(",");
         // this here?
-        classRosterArray[lastIndex]->setStudentId(studentData[lastIndex].substr(0, rhs));
+        this->classRosterArray[lastIndex]->setStudentId(studentData[lastIndex].substr(0, rhs));
 
         //set firstname
         int lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        classRosterArray[lastIndex]->setFirstName(studentData[lastIndex].substr(lhs, rhs - lhs));
+        this->classRosterArray[lastIndex]->setFirstName(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         //read lastname
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        classRosterArray[lastIndex]->setLastName(studentData[lastIndex].substr(lhs, rhs - lhs));
+        this->classRosterArray[lastIndex]->setLastName(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         //read Email
        
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
-        classRosterArray[lastIndex]->setEmail(studentData[lastIndex].substr(lhs, rhs - lhs));
+        this->classRosterArray[lastIndex]->setEmail(studentData[lastIndex].substr(lhs, rhs - lhs));
 
         ////read Age
         std::string::size_type size;
@@ -187,9 +177,11 @@ void Roster::studentParser(string row)
 	// E.3.a instansiates a new student object and adds to roster. 
 
 	//void Roster::addToRoster(string sid, string first, string last, string em, int age,
-	//	float d1, float d2, float d3, DegreeProgram d) {
-	//	Student * classRosterArray[currRosterSize + 1] = new Student() {sid, first, last, em, age, d1, d2, d3, d};
-	//	currRosterSize++
+	//	double d1, double d2, double d3, DegreeProgram d) {
+ //       
+
+	////	Student * classRosterArray[currRosterSize + 1] = new Student() {sid, first, last, em, age, d1, d2, d3, d};
+	////	currRosterSize++
 	//};
 
 
@@ -206,10 +198,13 @@ void Roster::studentParser(string row)
 	// Requirement E.3.c
 
 	// this looks good ?
-	void Roster::printAll() {
+	// void Roster::printAll() {
 
     //    cout << "hello world" << endl;
-            //Roster::classRosterArray[0];
+       /* for (int i = 0; i < rosterLimit; i++) {
+
+        }*/
+       
 
 		/*int i = 0;
         * // instead of sizeof i need a length thing... 
@@ -217,7 +212,7 @@ void Roster::studentParser(string row)
 			cout << Roster::classRosterArray[i];
 			i++;
 		};*/
-	}; // remember syntax
+	// remember syntax
 
 
 
