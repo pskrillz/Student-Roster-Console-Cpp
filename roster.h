@@ -1,8 +1,10 @@
 #pragma once
-#ifndef ROSTER_H
-#define ROSTER_H
+
 #include <string>
 #include "degree.h"
+#include "student.h"
+#include <vector>
+using namespace std;
 
 using std::string;
 const int currRosterSize = 5;
@@ -24,8 +26,10 @@ public:
 	int rosterLimit;
 	int lastIndex;
 
+	//array of pointers
 	Student** classRosterArray;
 	void studentParser(string row);
+	void getRoster();
 
 	/*void addToRoster(string sid, string first, string last, string em, int age,
 		double d1, double d2, double d3, DegreeProgram d);*/
@@ -46,4 +50,4 @@ public:
 
 };
 
-#endif
+

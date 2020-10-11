@@ -7,6 +7,7 @@ using namespace std;
 
 // default constructor definition
 Student::Student() {
+
 	this->studentId = "";
 	this->firstName = "";
 	this->lastName = "";

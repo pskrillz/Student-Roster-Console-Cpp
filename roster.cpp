@@ -4,6 +4,7 @@
 #include "degree.h"
 #include "student.h"
 #include "roster.h"
+
 using namespace std;
 
 // const usage here?
@@ -17,45 +18,36 @@ Roster::Roster() {
 
 Roster::Roster(int rLimit) {
 	this->rosterLimit = rLimit;
-	this->lastIndex = rosterLimit - 1;
+	this->lastIndex = -1;
 	this->classRosterArray = new Student * [rosterLimit];
 };
 
+
+
+void Roster::getRoster() {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 void Roster::studentParser(string row)
 {
+
     if (lastIndex < rosterLimit) {
         lastIndex++;
         double darray[Student::daysSizeArr];
 
-
-        /* if (row[0] == 'A') {
-            if (row[1] == '1') {
-                this->classRosterArray[lastIndex] = new Student();
-                classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
-            }
-            else if (row[1] == '2') {
-                this->classRosterArray[lastIndex] = new Student();
-                classRosterArray[lastIndex]->setDegreeProgram(NETWORK);
-            }
-            else if (row[1] == '3') {
-                this->classRosterArray[lastIndex] = new Student();
-                classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
-            }
-        else if (row[0] == 'A') {
-            this->classRosterArray[lastIndex] = new Student();
-            classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
-
-        }
-        else if (row[0] == 'A') {
-            this->classRosterArray[lastIndex] = new Student();
-            classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
-        }
-        else {
-            cerr << "invaild degree type! exiting now! \n";
-            exit(-1);
-        }*/
-
-        this->classRosterArray[lastIndex] = new Student();
+       
+        this->classRosterArray[lastIndex] = new Student; // constructor or not??
         //read student ID
         int rhs = studentData[lastIndex].find(",");
         // this here?
@@ -179,7 +171,11 @@ void Roster::studentParser(string row)
 		//};
 	/*};*/
 
-
+void Roster::printAll() {  
+    for (int i = 0; i < 2; i++) {
+       cout << classRosterArray[i]->getStudentId();
+    };
+};
 
 
 
@@ -187,9 +183,11 @@ void Roster::studentParser(string row)
 	// E.3.a instansiates a new student object and adds to roster. 
 
 	//void Roster::addToRoster(string sid, string first, string last, string em, int age,
-	//	float d1, float d2, float d3, DegreeProgram d) {
-	//	Student * classRosterArray[currRosterSize + 1] = new Student() {sid, first, last, em, age, d1, d2, d3, d};
-	//	currRosterSize++
+	//	double d1, double d2, double d3, DegreeProgram d) {
+ //       
+
+	////	Student * classRosterArray[currRosterSize + 1] = new Student() {sid, first, last, em, age, d1, d2, d3, d};
+	////	currRosterSize++
 	//};
 
 
@@ -206,13 +204,49 @@ void Roster::studentParser(string row)
 	// Requirement E.3.c
 
 	// this looks good ?
-	//void Roster::printAll() {
-	//	int i = 0;
-	//	while (i < sizeof Roster::classRosterArray) {
-	//		cout << Roster::classRosterArray[i];
-	//		i++;
-	//	};
-	//};
+	// void Roster::printAll() {
+
+    //    cout << "hello world" << endl;
+       /* for (int i = 0; i < rosterLimit; i++) {
+
+        }*/
+       
+
+		/*int i = 0;
+        * // instead of sizeof i need a length thing... 
+		while (i < Roster::classRosterArray) {
+			cout << Roster::classRosterArray[i];
+			i++;
+		};*/
+	// remember syntax
+
+
+
+
+// reference way
+//void Roster::printAll() {
+//    for (int i = 0; i < lastIndex; i++) {
+//    cout << classRosterArray[i];
+//    };
+//};
+
+//void Roster::printAll() {
+//    for (int i = 0; i < lastIndex; i++) {
+//    cout << classRosterArray[i];
+//    };
+//};
+//
+//void roster::printRoster() const
+//{
+//    for (unsigned int i = 0; i < classRosterArray.size(); i++)
+//        classRosterArray.at(i)->Print();
+//}
+
+  /*  {
+        for (
+            int i = 0; i <= this->lastIndex; i++)(this->classRosterArray)[i]->print();
+    }
+*/
 
 	// Requirement E.3.d
 	//void printAverageDaysInCourse(string studentID)  that correctly 
