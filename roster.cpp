@@ -172,7 +172,7 @@ void Roster::studentParser(string row)
 	/*};*/
 
 void Roster::printAll() {  
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < this->rosterLimit; i++) {
        cout << classRosterArray[i]->getStudentId();
     };
 };
