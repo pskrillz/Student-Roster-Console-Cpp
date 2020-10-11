@@ -45,6 +45,7 @@ void Roster::studentParser(string row)
     if (lastIndex < rosterLimit) {
         lastIndex++;
         double darray[Student::daysSizeArr];
+        string degreeProgramString;
 
        
         this->classRosterArray[lastIndex] = new Student; // constructor or not??
@@ -74,29 +75,49 @@ void Roster::studentParser(string row)
         lhs = rhs + 1;
         rhs = studentData[lastIndex].find(",", lhs);
 
+
         // made progress here on some stuff but still not working
-        // classRosterArray[lastIndex]->setAge(std::stoi(studentData[lastIndex].substr(lhs, rhs - lhs), &size));
+        classRosterArray[lastIndex]->setAge(std::stoi(studentData[lastIndex].substr(lhs, rhs - lhs), &size));
 
         //read days in course
-        //lhs = rhs + 1;
-        //rhs = studentData[lastIndex].find(",", lhs);
-        //darray[0] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
+        lhs = rhs + 1;
+        rhs = studentData[lastIndex].find(",", lhs);
+        darray[0] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
 
-        //lhs = rhs + 1;
-        //rhs = studentData[lastIndex].find(",", lhs);
-        //darray[1] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
+        lhs = rhs + 1;
+        rhs = studentData[lastIndex].find(",", lhs);
+        darray[1] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
 
-        //lhs = rhs + 1;
-        //rhs = studentData[lastIndex].find(",", lhs);
-        //darray[2] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
+        lhs = rhs + 1;
+        rhs = studentData[lastIndex].find(",", lhs);
+        darray[2] = stod(studentData[lastIndex].substr(lhs, rhs - lhs));
 
-        ////set the days
-        // classRosterArray[lastIndex]->setDays(darray[0], darray[1], darray[2]);
+        //set the days
+         classRosterArray[lastIndex]->setDays(darray[0], darray[1], darray[2]);
 
-        //lhs = rhs + 1;
-        //rhs = studentData[lastIndex].find(",", lhs);
-        // if rhs == "SECURITY")
-        //classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
+        lhs = rhs + 1;
+        rhs = studentData[lastIndex].find(",", lhs);
+        degreeProgramString = studentData[lastIndex].substr(lhs, rhs - lhs);
+        if (degreeProgramString == "SECURITY") {
+            classRosterArray[lastIndex]->setDegreeProgram(SECURITY);
+        }
+        else if (degreeProgramString == "NETWORK") {
+            classRosterArray[lastIndex]->setDegreeProgram(NETWORK);
+        }
+        else if (degreeProgramString == "SOFTWARE") {
+            classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
+        }
+        else
+        {
+            classRosterArray[lastIndex]->setDegreeProgram(UNDECIDED);
+        }
+           
+            
+      /*  else if (rhs == SOFTWARE)
+            classRosterArray[lastIndex]->setDegreeProgram(SOFTWARE);
+        else if (rhs == NETWORK)
+            classRosterArray[lastIndex]->setDegreeProgram(NETWORK);
+        else classRosterArray[lastIndex]->setDegreeProgram(UNDECIDED);*/
 
 
     //}
@@ -173,7 +194,21 @@ void Roster::studentParser(string row)
 
 void Roster::printAll() {  
     for (int i = 0; i < this->rosterLimit; i++) {
-       cout << classRosterArray[i]->getStudentId();
+        cout << classRosterArray[i]->getStudentId() << "    "
+            << "First Name: " << classRosterArray[i]->getFirstName() << "    "
+            << "Last Name: " << classRosterArray[i]->getLastName() << "    "
+            << "Age: " << classRosterArray[i]->getAge() << "    "
+
+
+
+            << "daysInCourse: [" << *classRosterArray[i]->getDays() << ","
+                                    << *(classRosterArray[i]->getDays() + 1) << ","
+                                    << *(classRosterArray[i]->getDays() + 2) << "]    "
+
+
+
+            << "Degree Program: " << degreeProgramArray[classRosterArray[i]->getDegreeProgram()] << endl;
+
     };
 };
 
