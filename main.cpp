@@ -6,12 +6,37 @@
 
 using namespace std;
 
+void spacer() {
+    cout << "________________________________" << endl;
+};
+
+void loadingGraphic() {
+    cout << "* * * *" << endl << "* * * *" << endl << "* * * *" << endl;
+}
+
+string x;
+void pressContinue() {
+    cout << "type 'start' to begin" << endl;
+    while(x != "start" ){
+        cin >> x;
+        cout << "Invalid entry!" << endl;
+    };
+
+    return;
+};
+
 
 
 int main()
 {
     std::cout << "Scripting and Programming - Applications C867\nC++\nStudent ID: 001424316\nPayam Farahmand\n-----------------------\n";
-
+    cout << "Welcome to School System Migrator! " << endl;
+    spacer();
+    pressContinue();
+    cout << "Migration commencing..." << endl;
+    loadingGraphic();
+    loadingGraphic();
+    loadingGraphic();
 
     //Student* student1 = new Student; //instantiation
     //cout << student1->getFirstName() << endl;
@@ -50,6 +75,7 @@ int main()
          cout << "Student " << i + 1<< " parsed successfully" << endl;
      };
      cout << "Parsing Complete, Roster Created" << endl;
+     spacer();
 
 
     
@@ -103,3 +129,5 @@ int main()
 ////expected: the above line should print a message saying such a student with this ID was not found.
 //
 //5.  Implement the destructor to release the memory that was allocated dynamically in Roster.
+
+
