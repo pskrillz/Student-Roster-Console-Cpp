@@ -13,23 +13,23 @@ int main()
     std::cout << "Scripting and Programming - Applications C867\nC++\nStudent ID: 001424316\nPayam Farahmand\n-----------------------\n";
 
 
-    Student* student1 = new Student; //instantiation
-    cout << student1->getFirstName() << endl;
-    student1->setFirstName("Bob");
-    cout << student1->getFirstName() << endl;
-    student1->setLastName("Frank");
-    cout << student1->getLastName() << endl;
-    student1->setStudentId("A1");
-    cout << student1->getStudentId() << endl;
-    student1->setEmail("bob@gmail.com");
-    cout << student1->getEmail() << endl;
-    student1->setAge(5);
-    cout << student1->getAge() << endl;
-    student1->setDays(1.9, 2.0, 3.0);
-    cout << *student1->getDays() << endl;
-    cout << *((student1->getDays()) + 1) << endl;
-    cout << *((student1->getDays()) + 2) << endl;
-    cout << student1->getDegreeProgram() << endl;
+    //Student* student1 = new Student; //instantiation
+    //cout << student1->getFirstName() << endl;
+    //student1->setFirstName("Bob");
+    //cout << student1->getFirstName() << endl;
+    //student1->setLastName("Frank");
+    //cout << student1->getLastName() << endl;
+    //student1->setStudentId("A1");
+    //cout << student1->getStudentId() << endl;
+    //student1->setEmail("bob@gmail.com");
+    //cout << student1->getEmail() << endl;
+    //student1->setAge(5);
+    //cout << student1->getAge() << endl;
+    //student1->setDays(1.9, 2.0, 3.0);
+    //cout << *student1->getDays() << endl;
+    //cout << *((student1->getDays()) + 1) << endl;
+    //cout << *((student1->getDays()) + 2) << endl;
+    //cout << student1->getDegreeProgram() << endl;
 
     //// enum NETWORK = 3
     //student1->setDegreeProgram(NETWORK);
@@ -40,21 +40,31 @@ int main()
     //cout << degreeProgramArray[student1->getDegreeProgram()] << endl;
 
  
-     Roster* roster1 = new Roster(currRosterSize);
-     roster1->studentParser(studentData[0]);
-     roster1->studentParser(studentData[1]);
+
+    cout << "Parsing Student Data..." << endl;
+    
+     Roster* classRoster = new Roster(currRosterSize);
+
+     for (int i = 0; i < classRoster->rosterLimit; i++) {
+         classRoster->studentParser(studentData[i]);
+         cout << "Student " << i + 1<< " parsed successfully" << endl;
+     };
+     cout << "Parsing Complete, Roster Created" << endl;
+
+
     
     // cout << studentData[0] << endl;
     
-   //  roster1->printAll();
+     classRoster ->printAll();
+
 
     
     // working!!
-     cout << roster1->classRosterArray[0]->getFirstName() << "  "
+   /*  cout << roster1->classRosterArray[0]->getFirstName() << "  "
          << roster1->classRosterArray[0]->getLastName() << "    " <<
-         roster1->classRosterArray[0]->getStudentId() << endl;
+         roster1->classRosterArray[0]->getStudentId() << endl;*/
 
-     roster1->printAll();
+    // roster1->printAll();
 
 
     //cout << roster2->lastIndex << endl;
