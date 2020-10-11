@@ -29,6 +29,11 @@ void pressContinue() {
 
 int main()
 {
+
+    Student* student1 = new Student();
+    cout << student1->getAge();
+
+
     std::cout << "Scripting and Programming - Applications C867\nC++\nStudent ID: 001424316\nPayam Farahmand\n-----------------------\n";
     cout << "Welcome to School System Migrator! " << endl;
     spacer();
@@ -88,9 +93,13 @@ int main()
      spacer();
      
      cout << "Finished Migration" << endl;
+
+     cout << "Exiting Program...." << endl;
+     classRoster->~Roster();
+  
      cout << "Thanks for Using Student Migrator 2020" << endl << "Goodbye" << endl;
  
-
+    
     return 0;
     
 };

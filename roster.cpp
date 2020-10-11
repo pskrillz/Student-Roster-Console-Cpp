@@ -221,3 +221,9 @@ void Roster::removeStudent(string studentId) {
 };
 
 
+// destructor 
+Roster::~Roster()
+{
+    for (int i = 0; i < rosterLimit; i++)
+        delete classRosterArray[i];
+}
